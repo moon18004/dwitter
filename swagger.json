@@ -5,7 +5,7 @@
     "description": "Dwitter API",
     "version": "1.0.0"
   },
-  "host": "https://dwitter.onrender.com",
+  "host": "dwitter.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
