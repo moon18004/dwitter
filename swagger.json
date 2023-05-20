@@ -5,10 +5,10 @@
     "description": "Dwitter API",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://dwitter.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "securityDefinitions": {
     "Bearer": {
