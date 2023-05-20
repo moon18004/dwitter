@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app"
+    "start": "nodemon app",
+    "swagger": "node ./swagger.js"
   },
   "author": "Moon",
   "license": "ISC",
@@ -21,9 +22,11 @@
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.4.0",
     "morgan": "^1.10.0",
-    "socket.io": "^4.6.1"
+    "socket.io": "^4.6.1",
+    "swagger-ui-express": "^4.6.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "swagger-autogen": "^2.23.1"
   }
 }

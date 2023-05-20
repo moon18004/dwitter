@@ -3,13 +3,13 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import 'express-async-errors';
-
-import tweetsRouter from './router/tweets.js';
-import authRouter from './router/auth.js';
+// import tweetsRouter from './router/tweets.js';
+// import authRouter from './router/auth.js';
 import { config } from './config.js';
 import { Server } from 'socket.io';
 import { initSocket } from './connection/socket.js'
 import { connectDB } from './database/database.js';
+import  routes from './router/index.js';
 // import dotenv from 'dotenv';
 // dotenv.config();
 
@@ -24,8 +24,9 @@ app.use(helmet());
 app.use(cors());
 app.use(morgan('tiny'));
 
-app.use('/tweets', tweetsRouter);
-app.use('/auth', authRouter);
+// app.use('/tweets', tweetsRouter);
+// app.use('/auth', authRouter);
+app.use('/', routes);
 // app.use('/auth/me', (req, res, next) => {
 //   res.status(200).json({message: 'valid'});
 // })
