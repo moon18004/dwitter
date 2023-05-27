@@ -76,6 +76,11 @@
     },
     "/tweets/{id}": {
       "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "description": "",
         "parameters": [
           {
@@ -98,6 +103,11 @@
         }
       },
       "put": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "description": "",
         "parameters": [
           {
@@ -135,6 +145,11 @@
         }
       },
       "delete": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
         "description": "",
         "parameters": [
           {
@@ -162,6 +177,7 @@
     },
     "/auth/signup": {
       "post": {
+
         "description": "",
         "parameters": [
           {
@@ -201,6 +217,7 @@
     },
     "/auth/login": {
       "post": {
+        
         "description": "",
         "parameters": [
           {
