@@ -1,13 +1,22 @@
 import MongoDb from 'mongodb';
+import Mongoose from 'mongoose';
 import { config } from '../config.js';
 
-let db;
+
 
 export async function connectDB() {
-  return MongoDb.MongoClient.connect(config.db.host) //
-    .then((client) => db = client.db());
-}
+  // return MongoDb.MongoClient.connect(config.db.host) //
+  //   .then((client) => db = client.db());
 
+  return Mongoose.connect(config.db.host, {
+    useNewUrlParser:true,
+    useUnifiedTopology: true,
+    // useFindAndModify: false,
+  })
+}
+// TODO(Moon) : Delete below
+
+let db;
 export function getUsers(){
   return db.collection('users');
 }
