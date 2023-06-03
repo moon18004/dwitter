@@ -2,6 +2,7 @@ import {validationResult} from 'express-validator';
 
 
 export const validate = (req, res, next) => {
+  console.log(req.body);
   const error = validationResult(req);
   if(error.isEmpty()){
     return next();

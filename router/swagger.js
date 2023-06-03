@@ -5,7 +5,7 @@ const route = express.Router();
 
 const req = createRequire(import.meta.url);
 const swaggerDocument = req('../swagger.json');
-console.log(JSON.stringify(swaggerDocument));
+// console.log(JSON.stringify(swaggerDocument));
 
 // console.log("swagger");
 

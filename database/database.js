@@ -7,13 +7,17 @@ import { config } from '../config.js';
 export async function connectDB() {
   // return MongoDb.MongoClient.connect(config.db.host) //
   //   .then((client) => db = client.db());
-
-  return Mongoose.connect(config.db.host, {
-    useNewUrlParser:true,
-    useUnifiedTopology: true,
-    // useFindAndModify: false,
-  })
+  console.log(config.db.host);
+  return Mongoose.connect(config.db.host);
 }
+export function useVirtualId(schema){
+  schema.virtual('id').get(function () {
+    return this._id.toString();
+  })
+  schema.set('toJSON', {virtuals:true});
+  schema.set('toObject', {virtuals :true});
+}
+
 // TODO(Moon) : Delete below
 
 let db;
