@@ -13,7 +13,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'http://localhost:8080',
+  baseURL: 'https://dwitter.onrender.com',
   clientID: 'Uae9B7hR9vBvbiAn6oXJy9I3bSvJcZpp',
   issuerBaseURL: 'https://dev-r1j351qlttd53v8o.us.auth0.com'
 };
