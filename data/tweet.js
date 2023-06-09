@@ -45,6 +45,7 @@ export async function getById(id) {
 
 export async function create(text, userId) {
   const user = userRepository.findById(userId) || userRepository.findOauthById(userId);
+  console.log(user);
   return new Tweet({
           text,
           userId,
