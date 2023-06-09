@@ -13,7 +13,7 @@ export async function signup (req, res, next) {
   }
   else{
     const userId = await userRepository.createOauth({
-      nickname, name, email, picture
+      username: nickname, name, email, picture
     });
     const token = createJwtToken(userId);
     res.status(201).json({token, name});

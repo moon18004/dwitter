@@ -15,7 +15,7 @@ const userSchema = new Mongoose.Schema({
 });
 const oauthSchema = new Mongoose.Schema({
   name: { type: String, required: true },
-  nickname: { type: String, required: true },
+  username: { type: String, required: true },
   email: { type: String, required: true },
   picture: String,
 });
