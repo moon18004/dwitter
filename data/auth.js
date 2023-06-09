@@ -35,7 +35,7 @@ export async function findByUsername(username) {
 }
 
 export async function getOauthId(nickname){
-  return Oauth.findOne({nickname}).then((data)=> data.id);
+  return Oauth.findOne({nickname});
 }
 
 export async function createUser(user) {

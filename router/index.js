@@ -24,7 +24,7 @@ routes.use(auth(config));
 routes.get('/', (req, res, next) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
-routes.get('/profile', requiresAuth(), oauth.signup, 
+routes.get('/profile', requiresAuth(), oauth.signup
   // (req, res) => { res.send(JSON.stringify(req.oidc.user));  }
 );
 

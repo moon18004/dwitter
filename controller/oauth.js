@@ -6,9 +6,9 @@ import createJwtToken from './jwtGenerator.js';
 
 export async function signup (req, res, next) {
   const { nickname, name, email, picture } = req.oidc.user;
-  const id = await userRepository.getOauthId(nickname);
-  if(id){
-    const token = createJwtToken(id);
+  const found = await userRepository.getOauthId(nickname);
+  if(found){
+    const token = createJwtToken(found.id);
     res.status(201).json({token, nickname});
   }
   else{
