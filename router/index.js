@@ -21,7 +21,7 @@ const config = {
 const routes = express.Router();
 
 routes.use(auth(config));
-routes.get('/', (req, res, next) => {
+routes.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 routes.get('/profile', requiresAuth(), oauth.signup
