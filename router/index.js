@@ -22,9 +22,12 @@ const routes = express.Router();
 
 routes.use(auth(config));
 routes.get('/', (req, res, next) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-  next();
-}, oauth.signup);
+  res.send(() => {
+    req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out';
+    oauth.signup(req, res, next);
+  });
+  
+});
 routes.get('/profile', requiresAuth(), oauth.signup, 
   // (req, res) => { res.send(JSON.stringify(req.oidc.user));  }
 );
