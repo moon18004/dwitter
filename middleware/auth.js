@@ -13,6 +13,7 @@ export const isAuth = async (req, res, next) => {
   }
 
   const token = authHeader.split(' ')[1];
+  console.log(token);
   // TODO: Make it secure!
   jwt.verify(
     token,
@@ -21,7 +22,8 @@ export const isAuth = async (req, res, next) => {
       if (error) {
         return res.status(401).json(AUTH_ERROR);
       }
-      const user = await userRepository.findById(decoded.id);
+      const user = await userRepository.findById(decoded.id) || await userRepository.findOauthById(decoded.id);
+
       if (!user) {
         return res.status(401).json(AUTH_ERROR);
       }
