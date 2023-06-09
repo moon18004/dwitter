@@ -5,10 +5,10 @@
     "description": "Dwitter API",
     "version": "1.0.0"
   },
-  "host": "dwitter.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "securityDefinitions": {
     "Bearer": {
@@ -19,6 +19,41 @@
     }
   },
   "paths": {
+    "/": {
+      "get": {
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/tweets/": {
       "get": {
         "security": [
@@ -26,6 +61,7 @@
             "Bearer": []
           }
         ],
+
         "description": "",
         "parameters": [
           {
@@ -49,6 +85,7 @@
             "Bearer": []
           }
         ],
+
         "description": "",
         "parameters": [
           {
@@ -81,6 +118,7 @@
             "Bearer": []
           }
         ],
+
         "description": "",
         "parameters": [
           {
@@ -108,6 +146,7 @@
             "Bearer": []
           }
         ],
+
         "description": "",
         "parameters": [
           {
@@ -150,6 +189,7 @@
             "Bearer": []
           }
         ],
+
         "description": "",
         "parameters": [
           {
@@ -177,7 +217,6 @@
     },
     "/auth/signup": {
       "post": {
-
         "description": "",
         "parameters": [
           {
@@ -217,7 +256,6 @@
     },
     "/auth/login": {
       "post": {
-        
         "description": "",
         "parameters": [
           {

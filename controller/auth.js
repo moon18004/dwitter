@@ -3,6 +3,8 @@ import bcrypt from 'bcrypt';
 import {} from 'express-async-errors';
 import * as userRepository from '../data/auth.js';
 import { config } from '../config.js';
+import createJwtToken from './jwtGenerator.js';
+
 
 // Make it secure!
 const jwtSecretKey = 'F2dN7x8HVzBWaQuEEDnhsvHXRWqAR63z';
@@ -45,10 +47,10 @@ export async function login(req, res){
   res.status(200).json({token, username});
 }
 
-function createJwtToken(id){
-  // console.log('line 47, controller auth.js', config.jwt.secretKey);
-  return jwt.sign({ id }, config.jwt.secretKey, { expiresIn: config.jwt.expiresInSec });
-}
+// function createJwtToken(id){
+//   // console.log('line 47, controller auth.js', config.jwt.secretKey);
+//   return jwt.sign({ id }, config.jwt.secretKey, { expiresIn: config.jwt.expiresInSec });
+// }
 
 export async function me(req, res, next) {
   // console.log(asdf);
