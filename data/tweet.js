@@ -44,14 +44,22 @@ export async function getById(id) {
 }
 
 export async function create(text, userId) {
-  return userRepository.findById(userId).then((user) =>
-    new Tweet({
-      text,
-      userId,
-      name: user.name,
-      username: user.username,
-    }).save()
-  );
+  const user = userRepository.findById(userId) || userRepository.findOauthById(userId);
+  return new Tweet({
+          text,
+          userId,
+          name: user.name,
+          username: user.username,
+        }).save();
+  
+  // return userRepository.findById(userId).then((user) =>
+  //   new Tweet({
+  //     text,
+  //     userId,
+  //     name: user.name,
+  //     username: user.username,
+  //   }).save()
+  // );
 
   // const { name, username, url } = await userRepository.findById(userId);
 
